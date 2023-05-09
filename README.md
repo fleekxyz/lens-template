@@ -37,7 +37,7 @@ All commands are run from the root of the project, from a terminal:
 
 | Command                | Action                                           |
 | :--------------------- | :----------------------------------------------- |
-| `pnpm install`         | Starts local dev server at `localhost:3001`      |
+| `pnpm install`         | Installs the project dependencies      |
 | `pnpm run dev`         | Starts local dev server at `localhost:3001`      |
 | `pnpm run build`       | Build your production site to `./out/`           |
 | `pnpm run start`       | Preview your build locally, before deploying     |
