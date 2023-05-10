@@ -12,7 +12,7 @@ export default function Home() {
   const [searchString, setSearchString] = useState('')
 
   useEffect(() => {
-    getRecommendedProfiles() 
+    getRecommendedProfiles()
   }, [])
 
   async function getRecommendedProfiles() {
@@ -61,7 +61,7 @@ export default function Home() {
       searchForProfile()
     }
   }
-  
+
   return (
     <div>
       <div className={searchContainerStyle}>
@@ -69,7 +69,7 @@ export default function Home() {
           placeholder='Search'
           onChange={e => setSearchString(e.target.value)}
           value={searchString}
-          onKeyDown={handleKeyDown}      
+          onKeyDown={handleKeyDown}
         />
         <Button
           onClick={searchForProfile}
@@ -78,44 +78,42 @@ export default function Home() {
       </div>
       <div className={listItemContainerStyle}>
         {
-           loadingState === 'loading' && <Placeholders number={6} />
+          loadingState === 'loading' && <Placeholders number={6} />
         }
         {
           profiles.map((profile, index) => (
             <Link href={`/profile/${profile.id}`} key={index}>
-              <a>
-                <div className={listItemStyle}>
-                  <div className={profileContainerStyle} >
-                    {
-                      profile.picture && profile.picture.original ? (
+              <div className={listItemStyle}>
+                <div className={profileContainerStyle} >
+                  {
+                    profile.picture && profile.picture.original ? (
                       <Image
                         src={profile.picture.original.url}
                         className={profileImageStyle}
                         width="42px"
                         height="42px"
                       />
-                      ) : (
-                        <div
-                          className={
-                            css`
+                    ) : (
+                      <div
+                        className={
+                          css`
                             ${placeholderStyle};
                             background-color: ${profile.backgroundColor};
                             `
-                          }
-                        />
-                      )
-                    }
-                    
-                    <div className={profileInfoStyle}>
-                      <h3 className={nameStyle}>{profile.name}</h3>
-                      <p className={handleStyle}>{profile.handle}</p>
-                    </div>
-                  </div>
-                  <div>
-                    <p className={bioStyle}>{trimString(profile.bio, 200)}</p>
+                        }
+                      />
+                    )
+                  }
+
+                  <div className={profileInfoStyle}>
+                    <h3 className={nameStyle}>{profile.name}</h3>
+                    <p className={handleStyle}>{profile.handle}</p>
                   </div>
                 </div>
-              </a>
+                <div>
+                  <p className={bioStyle}>{trimString(profile.bio, 200)}</p>
+                </div>
+              </div>
             </Link>
           ))
         }

@@ -19,7 +19,7 @@ export default function Home() {
   const { profile } = useContext(AppContext)
 
   useEffect(() => {
-    fetchPosts() 
+    fetchPosts()
   }, [profile])
 
   async function fetchPosts() {
@@ -67,7 +67,7 @@ export default function Home() {
         }
         return post
       })
-  
+
       setPosts(postData)
       if (!postData.length) {
         setLoadingState('no-results')
@@ -100,44 +100,42 @@ export default function Home() {
       <div className={listItemContainerStyle}>
         {
           loadingState === 'no-results' && (
-            <h2 style={{color: 'white'}}>No results....</h2>
+            <h2 style={{ color: 'white' }}>No results....</h2>
           )
         }
         {
-           loadingState === 'loading' && <Placeholders number={6} />
+          loadingState === 'loading' && <Placeholders number={6} />
         }
         {
           posts.map((post, index) => (
             <Link href={`/profile/${post.profile.id || post.profile.profileId}`} key={index}>
-              <a>
-                <div className={listItemStyle}>
-                  <p className={itemTypeStyle}>{typeMap[post.__typename]}</p>
-                  <div className={profileContainerStyle} >
-                    {
-                      post.profile.picture && post.profile.picture.original ? (
+              <div className={listItemStyle}>
+                <p className={itemTypeStyle}>{typeMap[post.__typename]}</p>
+                <div className={profileContainerStyle} >
+                  {
+                    post.profile.picture && post.profile.picture.original ? (
                       <img src={post.profile.picture.original.url} className={profileImageStyle} />
-                      ) : (
-                        <div
-                          className={
-                            css`
+                    ) : (
+                      <div
+                        className={
+                          css`
                             ${placeholderStyle};
                             background-color: ${post.backgroundColor};
                             `
-                          }
-                        />
-                      )
-                    }
-                    
-                    <div className={profileInfoStyle}>
-                      <h3 className={nameStyle}>{post.profile.name}</h3>
-                      <p className={handleStyle}>{post.profile.handle}</p>
-                    </div>
-                  </div>
-                  <div>
-                    <p className={latestPostStyle}>{trimString(post.metadata.content, 200)}</p>
+                        }
+                      />
+                    )
+                  }
+
+                  <div className={profileInfoStyle}>
+                    <h3 className={nameStyle}>{post.profile.name}</h3>
+                    <p className={handleStyle}>{post.profile.handle}</p>
                   </div>
                 </div>
-              </a>
+                <div>
+                  <p className={latestPostStyle}>{trimString(post.metadata.content, 200)}</p>
+                </div>
+              </div>
             </Link>
           ))
         }

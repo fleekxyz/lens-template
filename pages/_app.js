@@ -92,26 +92,18 @@ function MyApp({ Component, pageProps }) {
           <div className={navContainerStyle}>
             <div className={linkContainerStyle}>
               <Link href='/'>
-                <a>
-                  <img src="/lensonfleek.png" className={iconStyle} />
-                </a>
+                <img src="lensonfleek.png" className={iconStyle} />
               </Link>
               <Link href='/'>
-                <a>
-                  <p className={linkTextStyle}>Home</p>
-                </a>
+                <p className={linkTextStyle}>Home</p>
               </Link>
               <Link href='/profiles'>
-                <a>
-                  <p className={linkTextStyle}>Explore Profiles</p>
-                </a>
+                <p className={linkTextStyle}>Explore Profiles</p>
               </Link>
               {
                 userProfile && (
                   <Link href={`/profile/${userProfile.id}`}>
-                    <a>
-                      <p className={linkTextStyle}>Profile</p>
-                    </a>
+                    <p className={linkTextStyle}>Profile</p>
                   </Link>
                 )
               }
@@ -128,7 +120,7 @@ function MyApp({ Component, pageProps }) {
                     className={modalButtonStyle}
                     onClick={() => setIsModalOpen(true)}>
                     <img
-                      src="/create-post.svg"
+                      src="create-post.svg"
                       className={createPostStyle}
                     />
                   </button>
