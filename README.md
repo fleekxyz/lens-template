@@ -1,6 +1,6 @@
 # Lens Protocol + Fleek Starter Kit 🌿
 
-![image](https://github.com/fleekxyz/lens-template/assets/73345016/1d91a573-ad8a-48e9-ac1f-54b825d2b012)
+![Lens Starter Kit](https://github.com/fleekxyz/lens-template/assets/55561695/6c26dc4e-8e71-4665-9d8a-0c8a1f749cbf)
 
 This is an example frontend app made by [Nader Dabit](https://twitter.com/dabit3) to start to build on top of [Lens Protocol](https://www.lens.xyz/). 
 
