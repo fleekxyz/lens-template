@@ -2,7 +2,7 @@
 
 ![Lens Starter Kit](https://github.com/fleekxyz/lens-template/assets/55561695/6c26dc4e-8e71-4665-9d8a-0c8a1f749cbf)
 
-This is an example frontend app made by [Nader Dabit](https://twitter.com/dabit3) to start to build on top of [Lens Protocol](https://www.lens.xyz/). 
+This is an example frontend app made by [Nader Dabit](https://twitter.com/dabit3) to start to build on top of [Lens Protocol](https://www.lens.xyz/). Publish directory: `out`, build command: `pnpm install && pnpm build`.
 
 ## 🚀 Project Structure
 
