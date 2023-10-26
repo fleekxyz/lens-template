@@ -92,7 +92,7 @@ function MyApp({ Component, pageProps }) {
           <div className={navContainerStyle}>
             <div className={linkContainerStyle}>
               <Link href='/'>
-                <img src="lensonfleek.png" className={iconStyle} />
+                <img src="lensonfleek.svg" className={iconStyle} />
               </Link>
               <Link href='/'>
                 <p className={linkTextStyle}>Home</p>
